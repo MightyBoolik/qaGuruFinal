@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.AppealReportPage;
 
-public class AppealReportTests {
+public class AppealReportTests extends TestBase {
     AppealReportPage appealPage = new AppealReportPage();
 
     @Test
