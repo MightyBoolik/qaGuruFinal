@@ -10,7 +10,7 @@ public class AppealReportTests extends TestBase {
     AppealReportPage appealPage = new AppealReportPage();
 
     @Test
-    @AllureId("1978")
+    @AllureId("1979")
     @DisplayName("Переход в журнал обращений")
     @Description("Переход на страницу журнала обращений")
     void openReport(){
