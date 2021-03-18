@@ -42,7 +42,7 @@ dependencies {
 
 tasks.withType(Test) {
     systemProperties += System.properties
-    System.setProperty("junit.jupiter.extensions.autodetection.enabled", "true")
+    systemProperty("junit.jupiter.extensions.autodetection.enabled", "true")
 }
 
 test {
