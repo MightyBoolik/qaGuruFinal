@@ -5,34 +5,44 @@ plugins {
 }
 
 repositories {
+    maven {url = "https://dl.bintray.com/qameta/maven-unstable/"}
     mavenCentral()
 }
 
 //sourceCompatibility = '1.8'
 
-dependencies {
-    implementation "org.aeonbits.owner:owner:1.0.12"
+def allureVersion = "2.13.8",
+    selenideVersion = "5.19.0",
+    junitVersion = "5.7.0"
 
-    testImplementation "com.codeborne:selenide:5.17.3"
-    testImplementation "io.qameta.allure:allure-selenide:2.13.8"
-    testImplementation "org.junit.jupiter:junit-jupiter-api:5.7.0"
-
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.7.0"
-    testImplementation "com.github.javafaker:javafaker:1.0.2"
-
-}
 
 allure {
+    version = "${allureVersion}"
     autoconfigure = true
-    version = "2.13.8"
-
+    aspectjweaver = true
     useJUnit5 {
-        version = "2.13.8"
+        version = "${allureVersion}"
     }
 }
+dependencies {
+    testImplementation(
+            "org.aspectj:aspectjweaver:1.9.6",
+            "com.codeborne:selenide:$selenideVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.qameta.allure:allure-ee-junit-platform:3.28.2",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "com.github.javafaker:javafaker:1.0.2",
+            "org.aeonbits.owner:owner:1.0.12"
+
+    )
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+
 
 tasks.withType(Test) {
     systemProperties += System.properties
+    System.setProperty("junit.jupiter.extensions.autodetection.enabled", "true")
 }
 
 test {
