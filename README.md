@@ -20,10 +20,8 @@
 #### Jenkins
 ![Jenkins](src/test/resources/images/Jenkins.png)
 
-#### Allure report
-![Allure](src/test/resources/images/AllureReport1.png)
-![Allure2](src/test/resources/images/AllureReport2.png)
-![Allure3](src/test/resources/images/AllureReport3.png)
+#### Allure TestOps
+![Allure](src/test/resources/images/allureTO.gif)
 
 #### Telegram notification
 ![Telegram1](src/test/resources/images/Telegram.png)
