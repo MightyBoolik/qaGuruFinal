@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import pages.DashBoardPage;
 import pages.MainCaaPage;
 import ru.allure.JiraIssue;
+import ru.allure.JiraIssues;
 import tests.TestBase;
 
 @DisplayName("Демо-кабинет. Главная страница")
@@ -15,7 +16,7 @@ public class CaaTests extends TestBase {
 
 
     @Test
-    @JiraIssue("QC3-29")
+    @JiraIssues(@JiraIssue("QC3-31"))
     @DisplayName("Заявка на подключение")
     @Description("Тест заявки на подключение")
     void makeAddRequestTest(){
@@ -23,7 +24,7 @@ public class CaaTests extends TestBase {
     }
 
     @Test
-    @JiraIssue("QC3-29")
+    @JiraIssues(@JiraIssue("QC3-31"))
     @DisplayName("Заявка на смену тарифа")
     @Description("Тест заявки на смену тарифа")
     void hitChangePlanTest(){
@@ -31,7 +32,7 @@ public class CaaTests extends TestBase {
     }
 
     @Test
-    @JiraIssue("QC3-29")
+    @JiraIssues(@JiraIssue("QC3-31"))
     @DisplayName("Помощь в настройке")
     @Description("Тест помощи в настройке")
     void helpAccessTest(){
@@ -39,7 +40,7 @@ public class CaaTests extends TestBase {
     }
 
     @Test
-    @JiraIssue("QC3-29")
+    @JiraIssues(@JiraIssue("QC3-31"))
     @DisplayName("Переход в дашборды")
     @Description("Тест перехода в дашборды")
     void goToDashboard(){

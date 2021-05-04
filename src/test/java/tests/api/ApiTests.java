@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.allure.JiraIssue;
+import ru.allure.JiraIssues;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -43,7 +44,8 @@ public class ApiTests extends ApiBase {
     }
 
     @Test
-    @JiraIssue("QC3-29")
+    @JiraIssues(@JiraIssue("QC3-31"))
+    @DisplayName("Превью продукта")
     void ctPreviews(){
         Map<String, String> cookies = new Auth().login();
         Response response =
