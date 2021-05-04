@@ -17,7 +17,6 @@ public class TestBase {
 
     @BeforeAll
     static void setup() {
-
         configureDriver();
 
     }
