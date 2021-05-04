@@ -17,9 +17,6 @@
 * browser (chrome, firefox)
 * video.storage 
 
-#### Jenkins
-![Jenkins](src/test/resources/images/Jenkins.png)
-
 #### Allure TestOps
 ![Allure](src/test/resources/images/allureTO.gif)
 
