@@ -9,7 +9,6 @@ public class ApiBase {
     @BeforeAll
     static void setup() {
         RestAssured.baseURI = getWebUrl();
-        ;
     }
 }
 
