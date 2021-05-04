@@ -12,6 +12,12 @@ public interface WebConfig extends Config {
     @Key("url")
     String getUrl();
 
+    @Key("user")
+    String user();
+
+    @Key("password")
+    String password();
+
     @Key("auth_token")
     String getAuthToken();
 
