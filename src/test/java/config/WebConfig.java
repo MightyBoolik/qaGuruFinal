@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources("classpath:configWeb.properties")
+@Config.Sources("classpath:config_web.properties")
 public interface WebConfig extends Config {
 
     @Key("browser")

@@ -6,17 +6,12 @@ import static io.qameta.allure.Allure.step;
 
 public class CallsReportPage {
 
-    public void mainPage(){
-        step("Переход на страницу журнала отчетов", ()-> open("/400090631/400146918/400146923/widgets/14588/journals/calls"));
-        step("Проверка загрузки элементов на странице", ()->{
-            $(".dct-header__title").shouldHave(text("Журнал звонков"));
-            $(".dct-table__cell-source_medium").shouldBe(enabled);
-        });
-
+    public void openCallsReportPage(){
+        step("Переход на страницу журнала отчетов", ()->
+                open("/400090631/400146918/400146923/widgets/14588/journals/calls"));
     }
 
-    public void filterBySourceMedium(){
-        String filterValue = "(direct) / (none)";
+    public void filterReportBySourceMediumTags(String filterValue){
         step("Клик по кнопке Фильтры",
                 ()-> $$(".no-livequery").findBy(text("Фильтры")).click());
         step("Выбор атрибута фильтра",
@@ -25,7 +20,5 @@ public class CallsReportPage {
                 ()-> $(".mgo-chip-input").setValue(filterValue).pressEnter());
         step("Нажатие на кнопку Применить",
                 ()-> $$(".no-livequery").findBy(text("Применить")).click());
-        step("Поиск первой строки со значением равным " +filterValue,
-                ()->$(".dct-table__cell-source_medium").shouldHave(text(filterValue)));
     }
 }

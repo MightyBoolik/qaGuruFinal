@@ -1,4 +1,4 @@
-package api;
+package helpers;
 
 import io.restassured.http.ContentType;
 
@@ -7,7 +7,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static templates.ReportTemplate.filters;
 
-public class Auth {
+public class CookieHelper {
     public Map<String, String> login() {
         return
                 given()

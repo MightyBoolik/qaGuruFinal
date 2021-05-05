@@ -6,7 +6,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static org.openqa.selenium.logging.LogType.BROWSER;
@@ -14,7 +13,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 public class DriverHelper {
 
     public static void configureDriver() {
-        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = ConfigHelper.getWebUrl();
         Configuration.browser = ConfigHelper.getBrowser();
         Configuration.startMaximized = true;

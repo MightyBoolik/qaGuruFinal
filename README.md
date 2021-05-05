@@ -18,11 +18,11 @@
 * video.storage 
 
 #### Allure TestOps
-![Allure](src/test/resources/images/allureTO.gif)
+![Allure](images/allureTO.gif)
 
 #### Telegram notification
-![Telegram1](src/test/resources/images/Telegram.png)
+![Telegram1](images/Telegram.png)
 
 #### Selenoid video
-![SelenoidGif](src/test/resources/images/Selenoid.gif)
+![SelenoidGif](images/Selenoid.gif)
 

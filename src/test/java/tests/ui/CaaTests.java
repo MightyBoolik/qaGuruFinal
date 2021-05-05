@@ -1,53 +1,56 @@
 package tests.ui;
 
-import io.qameta.allure.Description;
+import checkpoints.BaseCheckpoints;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.DashBoardPage;
+import pages.DashboardPage;
 import pages.MainCaaPage;
-import ru.allure.JiraIssue;
-import ru.allure.JiraIssues;
+import report.JiraIssue;
 import tests.TestBase;
 
-@DisplayName("Демо-кабинет. Главная страница")
+@Feature("Демо-кабинет. Страница СА")
 public class CaaTests extends TestBase {
     MainCaaPage caaPage = new MainCaaPage();
-    DashBoardPage dashBoardPage = new DashBoardPage();
+    DashboardPage dashBoardPage = new DashboardPage();
+    BaseCheckpoints baseCheck = new BaseCheckpoints();
+
 
 
     @Test
-    @JiraIssues(@JiraIssue("QC3-31"))
-    @DisplayName("Заявка на подключение")
-    @Description("Тест заявки на подключение")
+    @JiraIssue("QC3-31")
+    @Story("Заявка на подключение")
+    @DisplayName("Тест заявки на подключение")
     void makeAddRequestTest(){
-        caaPage.makeRequest();
+        caaPage.makeNewRequest();
+        baseCheck.checkDisappearRequestModal();
     }
 
     @Test
-    @JiraIssues(@JiraIssue("QC3-31"))
-    @DisplayName("Заявка на смену тарифа")
-    @Description("Тест заявки на смену тарифа")
+    @JiraIssue("QC3-31")
+    @Story("Заявка на смену тарифа")
+    @DisplayName("Тест заявки на смену тарифа")
     void hitChangePlanTest(){
         caaPage.hitChangePlan();
+        baseCheck.checkDisappearChangePlanModal();
     }
 
     @Test
-    @JiraIssues(@JiraIssue("QC3-31"))
-    @DisplayName("Помощь в настройке")
-    @Description("Тест помощи в настройке")
+    @JiraIssue("QC3-31")
+    @Story("Помощь в настройке")
+    @DisplayName("Тест помощи в настройке")
     void helpAccessTest(){
-        caaPage.helpAccess();
+        caaPage.clickHelpAccess();
+        baseCheck.checkOpenedHelpWindow();
     }
 
     @Test
-    @JiraIssues(@JiraIssue("QC3-31"))
-    @DisplayName("Переход в дашборды")
-    @Description("Тест перехода в дашборды")
+    @JiraIssue("QC3-31")
+    @Story("Переход в дашборды")
+    @DisplayName("Тест перехода в дашборды")
     void goToDashboard(){
-        dashBoardPage.dashboardMainPage();
+        dashBoardPage.openPage();
+        baseCheck.checkDashboardLaunch();
     }
-    
 }
-
-//для api https://lk.mango-office.ru/ics/api/400146923/calltracking/widgets/14588
-//

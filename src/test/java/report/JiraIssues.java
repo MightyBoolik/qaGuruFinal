@@ -1,4 +1,4 @@
-package ru.allure;
+package report;
 
 import java.lang.annotation.*;
 

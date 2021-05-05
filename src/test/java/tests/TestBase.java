@@ -18,13 +18,12 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         configureDriver();
-
     }
 
     @BeforeEach()
     public void beforeEach(){
         MainCaaPage demoPage = new MainCaaPage();
-        demoPage.openPage();
+        demoPage.openCaa();
     }
 
     @AfterEach

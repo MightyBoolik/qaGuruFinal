@@ -1,21 +1,27 @@
 package tests.ui;
 
-import io.qameta.allure.Description;
+import checkpoints.BaseCheckpoints;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.AppealReportPage;
-import ru.allure.JiraIssue;
-import ru.allure.JiraIssues;
+import report.JiraIssue;
 import tests.TestBase;
 
+@Feature("Демо-кабинет. Журнал обращений")
 public class AppealReportTests extends TestBase {
     AppealReportPage appealPage = new AppealReportPage();
+    BaseCheckpoints baseCheck = new BaseCheckpoints();
+
+
 
     @Test
-    @JiraIssues(@JiraIssue("QC3-31"))
-    @DisplayName("Переход в журнал обращений")
-    @Description("Переход на страницу журнала обращений")
+    @JiraIssue("QC3-31")
+    @Story("Переход в журнал обращений")
+    @DisplayName("Переход на страницу журнала обращений")
     void openReport(){
-        appealPage.mainPage();
+        appealPage.openAppealReportMainPage();
+        baseCheck.checkFirstRowInGridAndTitle("Журнал обращений");
     }
 }

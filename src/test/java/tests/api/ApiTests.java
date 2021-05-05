@@ -1,18 +1,16 @@
 package tests.api;
 
-import api.Auth;
+import helpers.CookieHelper;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.allure.JiraIssue;
-import ru.allure.JiraIssues;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import report.JiraIssue;
 
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static templates.ReportTemplate.filters;
 
 
@@ -25,7 +23,7 @@ public class ApiTests extends ApiBase {
     @DisplayName("Настройки виджета")
     void widgetSettings(){
 
-        Map<String, String> cookies = new Auth().login();
+        Map<String, String> cookies = new CookieHelper().login();
         Response response =
         given()
                 .cookies(cookies)
@@ -44,10 +42,10 @@ public class ApiTests extends ApiBase {
     }
 
     @Test
-    @JiraIssues(@JiraIssue("QC3-31"))
+    @JiraIssue("QC3-31")
     @DisplayName("Превью продукта")
     void ctPreviews(){
-        Map<String, String> cookies = new Auth().login();
+        Map<String, String> cookies = new CookieHelper().login();
         Response response =
                 given()
                         .cookies(cookies)
